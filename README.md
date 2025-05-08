@@ -10,7 +10,7 @@ Prerequisites
 - MySQL/PostgreSQL: Install and configure your database.
 
 1. Clone the Repository
-git clone https://github.com/yourusername/loan-management-system.git
+git clone https://github.com/saloni0706/loanManagement.git
 cd loan-management-system
 
 2. Configure the Database
@@ -18,8 +18,8 @@ Set up a PostgreSQL database and update src/main/resources/application.propertie
 
 For PostgreSQL:
 spring.datasource.url=jdbc:postgresql://localhost:5432/loan_management
-spring.datasource.username=your-username
-spring.datasource.password=your-password
+spring.datasource.username=username
+spring.datasource.password=password
 
 3. Install Dependencies
 Run the following command to install dependencies:
@@ -31,18 +31,9 @@ mvn spring-boot:run
 
 5. Access the Application
 Once the application is running, you can access the backend API at:
-http://localhost:8080
+http://localhost:9595
 
 Testing the Endpoints (Sample)
-
-- Login: POST /login  
-  Request body:
-  {
-    "username": "user@example.com",
-    "password": "password123"
-  }
-
-  ✅ After login, the response will contain a JWT token.
 
 - Add Customer: POST /addCustomer  
   Request body:
@@ -54,14 +45,23 @@ Testing the Endpoints (Sample)
     "address": "123 Main St",
     "role": "USER"
   }
+  
+  
+- Login: POST /login  
+  Request body:
+  {
+    "username": "john.doe@example.com",
+    "password": "password123"
+  }
+
+  ✅ After login, the response will contain a JWT token.
 
 - Get Customer by ID: GET /customers/{id}
 
 - Update Customer: PUT /customers/{id}  
   Request body:
   {
-    "name": "Updated Name",
-    "email": "updated.email@example.com",
+    "name": "John Smith",
     "phone": "9876543210"
   }
 
@@ -99,7 +99,7 @@ Testing the Endpoints (Sample)
 
 🔐 For protected routes, pass the JWT token in the Headers tab with:  
   Key = Authorization  
-  Value = Bearer <space> your_token_here  
+  Value = Bearer <space> generated token here  
   You will get this token in the response after a successful login.
 
 Assumptions & Limitations
