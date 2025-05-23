@@ -32,7 +32,7 @@ public class CustomerController {
 	private JwtUtil jwtUtil;
 
 	//saving user
-	@PostMapping("/addCustomer")
+	@PostMapping("/addUser")
 	public Customer saveUser(@RequestBody Customer customer) {
 		Customer savedCustomer = customerService.saveCustomer(customer);
 		return savedCustomer;
